@@ -2,19 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Install Docker') {
             steps {
-                sh 'df -h'
+                sh 'sudo yum install docker'
             }
         }
-        stage('Test') {
+        stage('Start Docker service') {
             steps {
-                echo 'Testing..'
+                sh 'sudo systemctl start docker'
             }
         }
-        stage('Deploy') {
+        stage('show images') {
             steps {
-                echo 'Deploying....'
+                sh 'docker images
+            }            
+        }     
+            stages('pull hello-world) {
+                       steps {
+                           sh 'sudo docker pull hello-world'
             }
         }
     }
