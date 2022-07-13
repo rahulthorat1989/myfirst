@@ -17,7 +17,7 @@ pipeline {
                 sh 'docker images'
             }            
         }     
-            stages('pull hello-world) {
+            stages('pull hello-world') {
                        steps {
                            sh 'sudo docker pull hello-world'
             }
