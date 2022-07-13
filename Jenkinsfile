@@ -14,7 +14,7 @@ pipeline {
         }
         stage('show images') {
             steps {
-                sh 'docker images
+                sh 'docker images'
             }            
         }     
             stages('pull hello-world) {
